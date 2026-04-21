@@ -15,7 +15,7 @@ WORKDIR /app
 # install curl for healthcheck
 RUN apk add --no-cache curl
 COPY --from=build /app/target/DemoDevopsPractice-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 8080
+EXPOSE 8000
 
 # stage 3: Healthecheck for app
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
