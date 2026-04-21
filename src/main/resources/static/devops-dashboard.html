@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Practice Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
+        }
+
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .card-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .status-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .status-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .status-label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .status-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .badge-info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .info-box strong {
+            color: #667eea;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 DevOps Practice Dashboard</h1>
+            <h2> Raju Kumar Kashyap</h2>
+            <h3> Devops Engineer |CI/CD |Azure Devops |Docker |K8S</h3>
+            <p>Your comprehensive DevOps learning and deployment management platform</p>
+        </div>
+
+        <div class="content">
+            <div class="info-box">
+                <strong>Welcome!</strong> This dashboard helps you practice and manage DevOps practices including containerization, CI/CD pipelines, monitoring, and infrastructure management.
+            </div>
+
+            <h2 style="color: #333; margin-bottom: 20px;">Core DevOps Practices</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">🐳</div>
+                    <h3>Containerization</h3>
+                    <p>Docker-based application containerization for consistent deployment across environments.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h3>CI/CD Pipeline</h3>
+                    <p>Continuous Integration and Deployment for automated testing and releases.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Monitoring</h3>
+                    <p>Real-time monitoring and logging for application health and performance tracking.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Infrastructure</h3>
+                    <p>Infrastructure as Code (IaC) for automated infrastructure provisioning.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔐</div>
+                    <h3>Security</h3>
+                    <p>Security best practices and vulnerability scanning in DevOps workflows.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Scaling</h3>
+                    <p>Horizontal and vertical scaling strategies for high availability.</p>
+                </div>
+            </div>
+
+            <div class="status-section">
+                <h2>Application Status</h2>
+                <div class="status-item">
+                    <span class="status-label">Application Status</span>
+                    <span class="status-badge badge-success">✓ Running</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Docker Container</span>
+                    <span class="status-badge badge-success">✓ Containerized</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Build Status</span>
+                    <span class="status-badge badge-success">✓ Successful</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Deployment Ready</span>
+                    <span class="status-badge badge-info">ℹ Active</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Environment</span>
+                    <span class="status-badge badge-info">ℹ Development</span>
+                </div>
+            </div>
+
+            <div class="status-section">
+                <h2>Quick Actions</h2>
+                <div class="button-group">
+                    <button class="btn btn-primary">Deploy Application</button>
+                    <button class="btn btn-primary">View Logs</button>
+                    <button class="btn btn-secondary">Configuration</button>
+                    <button class="btn btn-secondary">Documentation</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>DevOps Practice Platform v1.0 © 2026 | Dockerized Java Application</p>
+        </div>
+    </div>
+</body>
+</html>
