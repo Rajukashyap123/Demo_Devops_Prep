@@ -19,6 +19,6 @@ EXPOSE 8080
 
 # stage 3: Healthecheck for app
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
-CMD curl -f http://localhost:8080 || exit 1
+CMD curl -f http://localhost:8000 || exit 1
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
